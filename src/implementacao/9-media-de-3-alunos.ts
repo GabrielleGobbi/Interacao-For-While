@@ -13,35 +13,48 @@
     */
 
 function mediaNotas(notas: number[][]): string {
-    let resultado: string = "";
+    let resultado = ""; // Variável que vai armazenar a mensagem final para cada aluno
+    let i = 0; // Índice para percorrer os alunos (linhas da matriz)
 
-    for (let i = 0; i < notas.length; i++) {
-        let soma = 0;
+    // Loop externo para percorrer cada aluno
+    while (notas[i] !== undefined) {
+        let soma = 0; // Armazena a soma das notas de um aluno
+        let j = 0; // Índice para percorrer as notas do aluno
+        let quantidadeNotas = 0; // Contador para saber quantas notas o aluno tem
 
-        for (let j = 0; j < notas[i].length; j++) {
-            soma += notas[i][j];
+        // Loop interno para percorrer cada nota do aluno atual
+        while (notas[i][j] !== undefined) {
+            soma += notas[i][j]; // Soma a nota atual
+            quantidadeNotas++; // Conta mais uma nota
+            j++; // Avança para a próxima nota
         }
 
-        let media = soma / notas[i].length;
+        // Calcula a média dividindo a soma pela quantidade de notas
+        let media = soma / quantidadeNotas;
 
-        resultado += `Aluno ${i + 1}: `;
+        // Começa a frase com o número do aluno
+        resultado += "Aluno " + (i + 1) + ": ";
 
+        // Verifica a média e adiciona o status correspondente
         if (media >= 7) {
-            resultado += "Passou";
+            resultado += "Passou"; // Se a média for 7 ou mais, o aluno passou
         } else if (media > 4) {
-            resultado += "Recuperação";
+            resultado += "Recuperação"; // Se a média for entre 4 e 7, recuperação
         } else {
-            resultado += "Reprovado";
+            resultado += "Reprovado"; // Se a média for 4 ou menos, reprovado
         }
 
-        // Só adiciona a quebra de linha se **não for o último aluno**
-        if (i < notas.length - 1) {
-            resultado += "\n";
+        // Adiciona quebra de linha apenas se houver mais alunos
+        if (notas[i + 1] !== undefined) {
+            resultado += "\n"; // Quebra de linha para separar alunos
         }
+
+        i++; // Avança para o próximo aluno
     }
 
-    return resultado;
+    return resultado; // Retorna a string com os resultados de todos os alunos
 }
+
 
 
 
