@@ -55,8 +55,13 @@ function mediaNotas(notas: number[][]): string {
     return resultado; // Retorna a string com os resultados de todos os alunos
 }
 
+module.exports = mediaNotas;
 
-
+console.log(mediaNotas([
+    [8, 7, 9],
+    [5, 6, 5],
+    [3, 4, 2]
+  ]));
 
 /**Implemente o método calcularMediaAlunos, que recebe as notas de 3 provas de 3 alunos e calcula a média de cada aluno, retornando se o aluno passou, está em recuperação ou foi reprovado.
 
