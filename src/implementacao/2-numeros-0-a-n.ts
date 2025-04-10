@@ -1,20 +1,47 @@
 //resultado vai ser uma string
 function mostrarNumerosAteN(n: number): string {
-    let resultado: string = "invalido";
+    let resultado = "invalido";
 
     if (n >= 0) {
-        resultado = ""; // Zera a string
+        resultado = ""; // Reinicia o resultado
+
         for (let i = 0; i <= n; i++) {
-            resultado += i.toString(); // Adiciona o número na string
-            
+            let num = i;
+            let strNum = "";
+
+            if (num === 0) {
+                strNum = "0"; // Caso especial para zero
+            } else {
+                let temp = ""; // Temporária para montar os dígitos ao contrário
+
+                // Converte cada dígito em caractere (de trás pra frente)
+                while (num > 0) {
+                    let resto = num % 10;
+                    let caractere = "0123456789"[resto];
+                    temp += caractere;
+                    num = (num - (num % 10)) / 10;
+                }
+
+                // Agora invertemos a string manualmente (sem split, reverse, join)
+                let k = temp.length - 1;
+                while (k >= 0) {
+                    strNum += temp[k];
+                    k--;
+                }
+            }
+
+            // Adiciona o número convertido no resultado
+            resultado += strNum;
+
             if (i < n) {
-                resultado += ","; // Adiciona a vírgula entre os números, mas não no final
+                resultado += ","; // vírgula entre os números, exceto no final
             }
         }
     }
-    
+
     return resultado;
 }
+
 
 /** maneira que permanece como numero 
  * function mostrarNumerosAteN(n:number) :void {// retorno nulo , sem retorno especifico
