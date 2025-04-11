@@ -20,6 +20,9 @@ function tabelaConversao(): string {
     return resultado;
 }
 
+module.exports =tabelaConversao;
+
+
 /**
  * Implemente o método tabelaPolegadasParaCm, que gera uma tabela de conversão de polegadas para centímetros de 1 a 20. Considere que 1 polegada é igual a 2.54 centímetros.
 

@@ -1,35 +1,39 @@
 function segundoMaiorValor(numeros: number[]): number {
-    // Garantimos que há pelo menos dois números no array
-    if (numeros.length < 2) {//numeros.length é para contar o tamanho total do array 
-        throw new Error("O array deve ter pelo menos dois números."); // esse comando é pra não ter que colocar na saida que poderia ter um retorno de string tbm
+    // Garante que há pelo menos dois números usando verificação manual
+    if (numeros[0] === undefined || numeros[1] === undefined) {
+        throw new Error("O array deve ter pelo menos dois números.");
     }
 
-    // Inicializamos as variáveis com o menor valor possível
-    let maior = -Infinity;//recebe o menor valor possivel
+    // Inicializa as variáveis com o menor valor possível
+    let maior = -Infinity;
     let segundoMaior = -Infinity;
 
-    // Percorremos o array usando um loop for tradicional
-    for (let i = 0; i < numeros.length; i++) {
-        // Se o número atual for maior que 'maior'
-        if (numeros[i] > maior) {
-            segundoMaior = maior; // O 'maior' antigo agora vira o 'segundoMaior'
-            maior = numeros[i]; // Atualizamos 'maior' com o novo maior número
-        } 
-        // Se o número atual for menor que 'maior', mas maior que 'segundoMaior'
-        else if (numeros[i] > segundoMaior && numeros[i] !== maior) {
-            segundoMaior = numeros[i]; // Atualizamos apenas o 'segundoMaior'
+    let i = 0;
+
+    // Percorre manualmente os elementos do array
+    while (numeros[i] !== undefined) {
+        let atual = numeros[i];
+
+        if (atual > maior) {
+            segundoMaior = maior;
+            maior = atual;
+        } else if (atual > segundoMaior && atual !== maior) {
+            segundoMaior = atual;
         }
+
+        i++;
     }
 
-    // Se 'segundoMaior' ainda for -Infinity, significa que não há segundo maior número válido
+    // Se ainda for -Infinity, não houve segundo valor diferente
     if (segundoMaior === -Infinity) {
         throw new Error("Não há um segundo maior valor válido.");
     }
 
-    return segundoMaior; // Retornamos o segundo maior número encontrado
+    return segundoMaior;
 }
 
-// 🔥 Testando a função
+
+//  Testando a função
 console.log(segundoMaiorValor([10, 25, 3, 18])); // 18
 console.log(segundoMaiorValor([50, 100, 99, 80])); // 99
 console.log(segundoMaiorValor([5, 5, 5, 3])); // 3

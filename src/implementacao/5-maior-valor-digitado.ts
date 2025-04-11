@@ -1,18 +1,22 @@
-function mostrarMaiorValor(n:number[]):number {
-    let numero=n[0]; // a variavel numero do tipo number recebe o valor que esta na posição 0 do array
-    let m:number=n.length;//tamanho array
-    for(let i:number=1;i<m;i++){
-            if(numero<n[i])// é n[i] , pois a variavel i é que faz percorrer o array <3 para percorrer não se deve usar uma constante fixa <3
-                numero=n[i];
+function mostrarMaiorValor(n: number[]): number {
+    let i = 1; // Começamos a comparação a partir do segundo elemento
+    let maior = n[0]; // Assume que o primeiro valor é o maior inicialmente
 
+    // Enquanto existir elemento na posição i (sem usar length)
+    while (n[i] !== undefined) {
+        if (n[i] > maior) {
+            maior = n[i]; // Atualiza o maior valor
+        }
+        i++; // Avança para o próximo índice
     }
-       
-    return numero;
+
+    return maior;
 }
 
-console.log(mostrarMaiorValor([4,19,5]));
-
-
+ module.exports=mostrarMaiorValor;
+console.log(mostrarMaiorValor([4, 19, 5]));      // 19
+console.log(mostrarMaiorValor([10, 25, 3, 18])); // 25
+console.log(mostrarMaiorValor([7, 7, 7]));       // 7
 
 /**Implemente o método maiorValorDigitado, que recebe um array de números e retorna o maior valor digitado.
 
