@@ -71,3 +71,4 @@ Para a entrada N = 3, a saída deve ser: 0, 1, 2, 3.
 module.exports = mostrarNumerosAteN;
 console.log(mostrarNumerosAteN(5));
 mostrarNumerosAteN(5);
+console.log(mostrarNumerosAteN(10));
