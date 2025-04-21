@@ -56,4 +56,9 @@ O método deve continuar pedindo pares até que o valor de M seja maior que N.
 Exemplos:
 Para a entrada M = 1 e N = 5, a saída deve ser: 15 (pois 1 + 2 + 3 + 4 + 5 = 15).
 Para a entrada M = 10 e N = 15, a saída deve ser: 75 (pois 10 + 11 + 12 + 13 + 14 + 15 = 75).
-Para a entrada M = 3 e N = 6, a saída deve ser: 18 (pois 3+4+5+6=18). */
+Para a entrada M = 3 e N = 6, a saída deve ser: 18 (pois 3+4+5+6=18). 
+
+7- nome de variaveeeel. mesmo que m>n ainda há um intervalo entre eles, por que ele não é calculado? acredito que deva ser calculado igualmente e ate uma versão que reconheça se os 2 são iguais seja bom, ai poderiam mudar o retorno final para "A soma do intervalo de M ate N", ja que dessa forma não fica implicito que o numero M é maior ou menor que N
+
+
+*/
