@@ -1,10 +1,10 @@
-function mostrarMaiorValor(n: number[]): number {
+function mostrarMaiorValor(arrayN: number[]): number {
     let i = 1;
-    let maior = n[0]; 
+    let maior = arrayN[0]; 
     
-    while (n[i] !== undefined) {
-        if (n[i] > maior) {
-            maior = n[i]; 
+    while (arrayN[i] !== undefined) {
+        if (arrayN[i] > maior) {
+            maior = arrayN[i]; 
         }
         i++; 
     }

@@ -1,15 +1,15 @@
-function exibirNumerosEntreMeN(M: number, N: number): number[] {
-    let resultado: number[] = []; 
+function exibirNumerosEntreMeN(numberM: number, numberN: number): number[] {
+    let result: number[] = []; 
 
-    if (M > N) {
+    if (numberM > numberN) {
         return []; 
     }
 
-    for (let i = M; i <= N; i++) {
-        resultado.push(i); 
+    for (let i = numberM; i <= numberN; i++) {
+        result.push(i); 
     }
 
-    return resultado; 
+    return result; 
 }
 
 console.log(exibirNumerosEntreMeN(3,7 )); 
